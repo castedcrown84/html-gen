@@ -60,6 +60,19 @@ inquirer
       name: 'linkedin',
       message: 'Enter your LinkedIn URL.',
     },
-  ])
+  ]).then((answers) => {
+
+    const htmlPageContent = generateHTML(answers)
+
+    fs.writeFile("index.html", htmlPageContent, (error) =>
+    
+    error? console.error(error) : console.log('success')
+    
+    
+    )
+
+
+
+  })
 
 
